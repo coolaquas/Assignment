@@ -15,7 +15,7 @@ button1.on("click", () => {
   output2.hide();
   output3.hide();
   $.ajax({url: "https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc&per_page=1", success: function(result){
-   $("#output-1").html(result.items[0].description);
+   $("#output-1").html("Description :" + result.items[0].description);
       }});
  });
  
