@@ -27,9 +27,9 @@ button1.on("click", () => {
       output2.show();
       output3.hide();
       $.ajax({url: "https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc&per_page=5", success: function(result){
-      var out =(result.items[0].description) + "<br/>";
+      var out ="Description :" + (result.items[0].description) + "<br/>";
       for(i=1;i<result.items.length;i++) {
-        out += (result.items[i].description) + "<br/>";
+        out +="Description :" + (result.items[i].description) + "<br/>";
        };
       $("#output-2").html(out);
 		}});
@@ -43,13 +43,13 @@ button3.on("click", () => {
   output2.hide();
   output3.show();
   $.ajax({url: "https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc&per_page=5", success: function(result){
-    var id = (result.items[0].id) + "<br/>";
-    var node_id =(result.items[0].node_id) + "<br/>";
-    var name =(result.items[0].name) + "<br/>";
+    var id = "ID :"+(result.items[0].id) + "<br/>";
+    var node_id = "Node_ID :"+ (result.items[0].node_id) + "<br/>";
+    var name = "Name :"+ (result.items[0].name) + "<br/>";
       for(i=1;i<result.items.length;i++) {
-        id += (result.items[i].id) + "<br/>";
-        node_id += (result.items[i].node_id) + "<br/>";
-        name += (result.items[i].name) + "<br/>";
+        id += "ID :"+(result.items[i].id) + "<br/>";
+        node_id +=  "Node_ID :"+(result.items[i].node_id) + "<br/>";
+        name +=  "Name :"+(result.items[i].name) + "<br/>";
        };
     $("#output-3").html(id).append(node_id).append(name);
   }});
